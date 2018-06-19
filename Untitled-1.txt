@@ -1,0 +1,31 @@
+const textInput = document.querySelector("#textInput);
+
+textInput.addEventListener("change", function(event) {
+    everyInput = event.target.value.split("");
+});
+
+const allButtons = document.querySelectorAll("button");
+
+for (let button of allButtons)
+    button.addEventListener("click", function(event) {
+        console.log(event.target.innerText);
+        console.log(event.target.id);
+        console.log(event.target.dataset);
+    })
+
+
+
+
+
+function createCard () {
+    const cardElement = document.createElement("div")
+    cardElement.innerHTML = "<h1>A new card</h1>
+    return cardElement;
+}
+
+function addCardToHTML(card) {
+    document.body.appendChild(card);
+}
+
+const newCard = createCard();
+addCardToHTML(newCard);
